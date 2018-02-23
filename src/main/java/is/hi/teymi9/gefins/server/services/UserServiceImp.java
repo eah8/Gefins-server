@@ -11,6 +11,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  *
@@ -102,6 +103,21 @@ public class UserServiceImp implements UserService {
             }
         } catch (DataAccessException s) {
             throw new DataException(s);
+        }
+        return null;
+    }
+
+    /**
+     * Leitar að notanda með ákveðin token og skilar honum ef finnst
+     * @param token token sem leita skal eftir
+     * @return notandi með token ef til, annars null
+     */
+    @Override
+    public User findUserByToken(UUID token) {
+        List<User> users = userRep.findByToken(token);
+        if (users != null)
+        {
+            return users.get(0);
         }
         return null;
     }

@@ -4,6 +4,7 @@ import is.hi.teymi9.gefins.server.exceptions.DataException;
 import is.hi.teymi9.gefins.server.model.User;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  *
@@ -48,6 +49,12 @@ public interface UserService {
      * @throws DataException
      */
     public User findUser(String username, String password) throws DataException;
-    
+
+    /**
+     * Leitar að notanda með ákveðin token og skilar honum ef finnst
+     * @param token token sem leita skal eftir
+     * @return notandi með token ef til, annars null
+     */
+    public User findUserByToken(UUID token);
 
 }

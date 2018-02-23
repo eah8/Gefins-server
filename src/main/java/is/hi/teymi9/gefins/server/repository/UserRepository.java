@@ -4,6 +4,7 @@ import is.hi.teymi9.gefins.server.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  *
@@ -37,4 +38,7 @@ public interface UserRepository extends JpaRepository<User, Long>{
    
    // finnur alla users með ákveðið nafn username
    List<User> findByUsername(String name);
+
+   // finnur alla users með ákveðin token
+   List<User> findByToken(UUID token);
 }

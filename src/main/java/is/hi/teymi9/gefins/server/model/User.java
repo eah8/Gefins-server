@@ -2,6 +2,7 @@ package is.hi.teymi9.gefins.server.model;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.UUID;
 
 /**
  * Created by Sandra on 14.2.2018.
@@ -14,6 +15,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private UUID token = UUID.randomUUID();
+    // token til að auðkenna notenda sem er innskráður
 
     private String username;
     private String fullName;
@@ -42,6 +46,10 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public UUID getToken() {
+        return token;
     }
 
     public String getUsername() {
