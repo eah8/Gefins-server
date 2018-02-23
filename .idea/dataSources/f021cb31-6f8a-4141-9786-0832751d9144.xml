@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Gefins@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="Gefins">
+      <ObjectId>31493</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12401</ObjectId>
+    </database>
+    <database id="4" parent="1" name="Daginn">
+      <ObjectId>16393</ObjectId>
+    </database>
+    <role id="5" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="7" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-02-23.12:16:29.722</IntrospectionTimestamp>
+      <IntrospectionStateNumber>3035</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="8" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <sequence id="13" parent="7" name="dive_id_seq">
+      <ObjectId>31675</ObjectId>
+      <StateNumber>3032</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="14" parent="7" name="diver_id_seq">
+      <ObjectId>31686</ObjectId>
+      <StateNumber>3033</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="15" parent="7" name="useraccount_id_seq">
+      <ObjectId>31694</ObjectId>
+      <StateNumber>3034</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="16" parent="7" name="dive">
+      <ObjectId>31677</ObjectId>
+      <StateNumber>3035</StateNumber>
+    </table>
+    <table id="17" parent="7" name="diver">
+      <ObjectId>31688</ObjectId>
+      <StateNumber>3035</StateNumber>
+    </table>
+    <table id="18" parent="7" name="useraccount">
+      <ObjectId>31696</ObjectId>
+      <StateNumber>3034</StateNumber>
+    </table>
+    <column id="19" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3032</StateNumber>
+      <DefaultExpression>nextval(&apos;dive_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>dive_id_seq</SequenceName>
+    </column>
+    <column id="20" parent="16" name="decompression">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3032</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="21" parent="16" name="dive_date">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>3032</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="22" parent="16" name="diving_location">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3032</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="23" parent="16" name="letter">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3032</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="24" parent="16" name="max_depth">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3032</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="25" parent="16" name="otu">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3032</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="26" parent="16" name="total_time">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3032</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="27" parent="16" name="diver_id">
+      <Position>9</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3032</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="28" parent="16" name="dive_pkey">
+      <ObjectId>31684</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="16" name="dive_pkey">
+      <ObjectId>31685</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>dive_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="16" name="fktqno1llac13knjyaev4nmjk5e">
+      <ObjectId>31705</ObjectId>
+      <ColNames>diver_id</ColNames>
+      <RefTableId>31688</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>diver</RefTableName>
+      <RefKeyName>diver_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="31" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3033</StateNumber>
+      <DefaultExpression>nextval(&apos;diver_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>diver_id_seq</SequenceName>
+    </column>
+    <column id="32" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3033</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="33" parent="17" name="password">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3033</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="34" parent="17" name="diver_pkey">
+      <ObjectId>31692</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="17" name="diver_pkey">
+      <ObjectId>31693</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>diver_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3034</StateNumber>
+      <DefaultExpression>nextval(&apos;useraccount_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>useraccount_id_seq</SequenceName>
+    </column>
+    <column id="37" parent="18" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="38" parent="18" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="39" parent="18" name="full_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="40" parent="18" name="hasadminauthority">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3034</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="41" parent="18" name="password">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="42" parent="18" name="phonenr">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="43" parent="18" name="username">
+      <Position>8</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="44" parent="18" name="zip">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3034</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="45" parent="18" name="useraccount_pkey">
+      <ObjectId>31703</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="46" parent="18" name="useraccount_pkey">
+      <ObjectId>31704</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>useraccount_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
