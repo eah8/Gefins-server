@@ -68,7 +68,7 @@ public class UserController {
      * @return Skilaboð um að tekist hafi að búa til user
      * @throws DataException
      */
-    @RequestMapping(value = "createUser", method = RequestMethod.POST, consumes = "application/json")
+    @RequestMapping(value = "createUser", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
     public @ResponseBody String createUser(@RequestBody User u) throws DataException {
         LOGGER.info("JSON create user message: " + u.toString());
         userService.save(u);

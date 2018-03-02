@@ -39,6 +39,6 @@ public interface UserRepository extends JpaRepository<User, Long>{
    // finnur alla users með ákveðið nafn username
    List<User> findByUsername(String name);
 
-   // finnur alla users með ákveðin token
-   List<User> findByToken(UUID token);
+   // finnur alla users með ákveðið id
+   List<User> findById(UUID id);
 }

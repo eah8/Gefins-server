@@ -13,15 +13,9 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private UUID token = UUID.randomUUID();
-    // token til að auðkenna notenda sem er innskráður
-
+    private UUID id = UUID.randomUUID();
     private String username;
     private String fullName;
-
     private String email;
     private String phonenr;
     private String password;
@@ -44,12 +38,8 @@ public class User {
     public User() {
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
-    }
-
-    public UUID getToken() {
-        return token;
     }
 
     public String getUsername() {

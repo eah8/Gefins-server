@@ -109,12 +109,12 @@ public class UserServiceImp implements UserService {
 
     /**
      * Leitar að notanda með ákveðin token og skilar honum ef finnst
-     * @param token token sem leita skal eftir
+     * @param id token sem leita skal eftir
      * @return notandi með token ef til, annars null
      */
     @Override
-    public User findUserByToken(UUID token) {
-        List<User> users = userRep.findByToken(token);
+    public User findUserByToken(UUID id) {
+        List<User> users = userRep.findById(id);
         if (users != null)
         {
             return users.get(0);
