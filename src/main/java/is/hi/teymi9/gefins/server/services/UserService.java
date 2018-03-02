@@ -57,11 +57,21 @@ public interface UserService {
      */
     public User findUserByUsernameAndPassword(String username, String password) throws DataException;
 
+    public User findUserByUsername(String username);
+
     /**
      * Leitar að notanda með ákveðin token og skilar honum ef finnst
-     * @param token token sem leita skal eftir
+     * @param id token sem leita skal eftir
      * @return notandi með token ef til, annars null
      */
-    public User findUserByToken(UUID token);
+    public User findUserById(UUID id);
+
+    /**
+     * Uppfærir notanda í gagnagrunni
+     * @param u Uppfærðar upplýsingar notanda
+     * @return skilaboð um hvort uppfærsla tókst
+     * @throws DataException
+     */
+    public String updateUser(User u) throws DataException;
 
 }

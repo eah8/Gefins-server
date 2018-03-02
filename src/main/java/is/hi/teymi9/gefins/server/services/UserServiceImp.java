@@ -125,19 +125,47 @@ public class UserServiceImp implements UserService {
         return null;
     }
 
+    @Override
+    public User findUserByUsername(String username) {
+        List<User> users = userRep.findByUsername(username);
+        if (users.isEmpty()) {
+            return null;
+        }
+        return users.get(0);
+    }
+
     /**
      * Leitar að notanda með ákveðin token og skilar honum ef finnst
      * @param id token sem leita skal eftir
      * @return notandi með token ef til, annars null
      */
     @Override
-    public User findUserByToken(UUID id) {
+    public User findUserById(UUID id) {
         List<User> users = userRep.findById(id);
         if (users != null)
         {
             return users.get(0);
         }
         return null;
+    }
+
+    /**
+     * Uppfærir notanda í gagnagrunni
+     * @param u Uppfærðar upplýsingar notanda
+     * @return skilaboð um hvort uppfærsla tókst
+     * @throws DataException
+     */
+    @Override
+    public String updateUser(User u) throws DataException {
+        User oldUser = findUserById(u.getId());
+        User sameNameUser = findUserByUsername(u.getUsername());
+        if (oldUser == null || (sameNameUser != null && oldUser.getUsername() != sameNameUser.getUsername()))  {
+            return "Update user failed";
+        }
+        u.setPassword(oldUser.getPassword());
+        oldUser = u;
+        save(oldUser);
+        return "Update user successful!";
     }
 
 }

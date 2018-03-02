@@ -101,4 +101,18 @@ public class UserController {
         }
         return user;
     }
+
+    /**
+     *
+     * @param u user sem uppfæra á
+     * @return Skilaboð um að tekist hafi að uppfæra user
+     * @throws DataException
+     */
+    @RequestMapping(value = "updateUser", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
+    public @ResponseBody String updateUser(@RequestBody User u) throws DataException {
+        LOGGER.info("JSON update user message: " + u.toString());
+        String result = userService.updateUser(u);
+        return result;
+
+    }
 }
