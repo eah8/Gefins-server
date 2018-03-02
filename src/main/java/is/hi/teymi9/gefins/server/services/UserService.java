@@ -40,7 +40,14 @@ public interface UserService {
      * @throws DataException
      */
     public User save(User u) throws DataException;
-    
+
+    /**
+     * Segir til um hvort notandi með ákveðið notandanafn sé þegar til
+     * @param username notandanafn sem athuga skal
+     * @return true ef notandi er til, annars false
+     */
+    public boolean doesUserExist(String username);
+
     /**
      * Finnur user með nafn username og lykilorð password
      * @param username
@@ -48,7 +55,7 @@ public interface UserService {
      * @return 
      * @throws DataException
      */
-    public User findUser(String username, String password) throws DataException;
+    public User findUserByUsernameAndPassword(String username, String password) throws DataException;
 
     /**
      * Leitar að notanda með ákveðin token og skilar honum ef finnst

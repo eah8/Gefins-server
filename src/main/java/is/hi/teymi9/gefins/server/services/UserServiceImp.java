@@ -75,11 +75,29 @@ public class UserServiceImp implements UserService {
      */
     @Override
     public User save(User u) throws DataException {
+
         try {
             return userRep.save(u);
         } catch (DataAccessException s) {
             throw new DataException(s);
         }
+    }
+
+    /**
+     * Segir til um hvort notandi með ákveðið notandanafn sé þegar til
+     * @param username notandanafn sem athuga skal
+     * @return true ef notandi er til, annars false
+     */
+    @Override
+    public boolean doesUserExist(String username) {
+        List<User> users = userRep.findByUsername(username);
+        if (users.isEmpty()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+
     }
 
     /**
@@ -90,7 +108,7 @@ public class UserServiceImp implements UserService {
      * @return user with matching name and password if exists, else null
      */
     @Override
-    public User findUser(String username, String password) throws DataException {
+    public User findUserByUsernameAndPassword(String username, String password) throws DataException {
         try {
             List<User> users = userRep.findByUsername(username);
             if (users.isEmpty()) {

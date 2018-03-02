@@ -51,14 +51,16 @@ public class UserController {
     @RequestMapping(value="getUsers", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody List<User> getUsers() throws DataException {
         // bý til test users:
-        LOGGER.info("generating users");
-        User user1 = new User("olla", "Olof Frida Magnusdottir", "olla@hi.is", "1234567", "olla", 200, "Sturlugata 2", true);
-        User user2 = new User("sandra", "Sandra Mar Huldudottir", "sandra@hi.is", "1234567", "sandra", 201, "Sturlugata 3", false);
-        userService.addUser(user1);
-        userService.addUser(user2);
-
-        LOGGER.info("fetching XML states");
         List<User> users = userService.allUsers();
+        if (users.isEmpty()) {
+            LOGGER.info("generating users");
+            User user1 = new User("olla", "Olof Frida Magnusdottir", "olla@hi.is", "1234567", "olla", 200, "Sturlugata 2", true);
+            User user2 = new User("sandra", "Sandra Mar Huldudottir", "sandra@hi.is", "1234567", "sandra", 201, "Sturlugata 3", false);
+            userService.addUser(user1);
+            userService.addUser(user2);
+        }
+        LOGGER.info("fetching XML states");
+        users = userService.allUsers();
         return users;
     }
 
@@ -71,9 +73,16 @@ public class UserController {
     @RequestMapping(value = "createUser", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
     public @ResponseBody String createUser(@RequestBody User u) throws DataException {
         LOGGER.info("JSON create user message: " + u.toString());
-        userService.save(u);
-        LOGGER.info("User " + u.getUsername() + " created!");
-        return "JSON message received! User " + u.toString() + " created!";
+        if(!userService.doesUserExist(u.getUsername())) {
+            userService.save(u);
+            LOGGER.info("User " + u.getUsername() + " created!");
+            return "JSON message received! User " + u.toString() + " created!";
+        }
+        else {
+            return "Create user failed. Please try again.";
+        }
+
+
     }
 
     /**
@@ -85,7 +94,7 @@ public class UserController {
     @RequestMapping(value = "login", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
     public @ResponseBody User sendMessage(@RequestBody Credentials c) throws DataException {
         LOGGER.info("JSON login message: " + c.toString());
-        User user = userService.findUser(c.getUsername(), c.getPassword());
+        User user = userService.findUserByUsernameAndPassword(c.getUsername(), c.getPassword());
         return user;
     }
 }
