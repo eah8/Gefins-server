@@ -95,6 +95,10 @@ public class UserController {
     public @ResponseBody User sendMessage(@RequestBody Credentials c) throws DataException {
         LOGGER.info("JSON login message: " + c.toString());
         User user = userService.findUserByUsernameAndPassword(c.getUsername(), c.getPassword());
+        //System.out.println(user == null);
+        if (user == null) {
+            return new User();
+        }
         return user;
     }
 }
