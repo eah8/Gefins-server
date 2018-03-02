@@ -74,7 +74,7 @@ public class UserController {
     public @ResponseBody String createUser(@RequestBody User u) throws DataException {
         LOGGER.info("JSON create user message: " + u.toString());
         if(!userService.doesUserExist(u.getUsername())) {
-            userService.save(u);
+            userService.addUser(u);
             LOGGER.info("User " + u.getUsername() + " created!");
             return "JSON message received! User " + u.toString() + " created!";
         }
