@@ -23,7 +23,7 @@ import java.util.UUID;
 @Service
 public class UserServiceImp implements UserService {
 
-    // Tenging yfir í safn af köfurum
+    // Tenging yfir í safn af userum
     @Autowired
     UserRepository userRep;
 
@@ -36,7 +36,7 @@ public class UserServiceImp implements UserService {
     }
 
     /**
-     * Bætir við diver í diverRep
+     * Bætir við user í userRep
      *
      * @param u user
      * @throws DataException
