@@ -6,13 +6,6 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Módel klasi fyrir auglýsingu (Ad)
- *
- * @author Kristín María
- * @version 1.0
-
-
-/**
  *
  * @author Kristín María
  * @date March 2018
@@ -43,7 +36,7 @@ public class Ad {
     private String adUsername;
     // athugasemdir sem gerðar hafa verið við auglýsinguna
     @OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="ad")
-    private ArrayList<Comment> adComments;
+    private List<Comment> adComments;
     // póstnúmer staðsetning hlutar
     private String adLocation;
 
@@ -110,7 +103,7 @@ public class Ad {
 
     public void setAdUsername(String adUsername) { this.adUsername = adUsername; }
 
-    public ArrayList<Comment> getAdComments() {
+    public List<Comment> getAdComments() {
         return adComments;
     }
 

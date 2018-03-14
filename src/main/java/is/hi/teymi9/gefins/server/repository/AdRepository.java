@@ -5,22 +5,17 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 /**
  *
- * @author Kristín María
+ * @author Kristín María og Einar
  * @date March 2018
  *
  * Repository fyrir ad.
  */
-/**
- *
- * @author Einar
- * @date March 2018
- *
- * Repository fyrir ad.
- */
+
 
 public interface AdRepository extends JpaRepository<Ad, Long> {
 

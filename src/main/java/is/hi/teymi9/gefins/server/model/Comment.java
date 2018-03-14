@@ -4,15 +4,8 @@ import javax.persistence.*;
 import java.util.UUID;
 
 /**
- * Módel klasi fyrir athugasemdir (Comment)
  *
- * @author Ólöf Fríða
- * @version 1.0
-*/
-
-/**
- *
- * @author Kristín María
+ * @author Kristín María og Ólöf
  * @date March 2018
  *
  * Comment klasi til að senda upplýsingar um comment á þjón
