@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Comment {
     // unique auðkenni fyrir comment
     @Id
-    private UUID commentId = UUID.randomUUID();
+    private UUID id = UUID.randomUUID();
     // höfundur, þ.e. sá sem skrifaði commentið
     private String username;
     // commentið sjálft
@@ -25,8 +25,6 @@ public class Comment {
     // auglýsing sem commentið tilheyrir
     @ManyToOne(fetch= FetchType.LAZY)
     private Ad ad;
-    private int adId;
-
 
     /**
      * smiður með viðföngum
@@ -49,11 +47,11 @@ public class Comment {
 
 
     public UUID getId() {
-        return commentId;
+        return id;
     }
 
     public void setId(UUID id) {
-        this.commentId = id;
+        this.id = id;
     }
 
     public String getUsername() {
@@ -71,14 +69,5 @@ public class Comment {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
-    public int getAdId() {
-        return adId;
-    }
-
-    public void setAdId(int adId) {
-        this.adId = adId;
-    }
-
 
 }
