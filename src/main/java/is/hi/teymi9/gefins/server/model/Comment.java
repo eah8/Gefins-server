@@ -8,15 +8,23 @@ import java.util.UUID;
  *
  * @author Ólöf Fríða
  * @version 1.0
+*/
+
+/**
+ *
+ * @author Kristín María
+ * @date March 2018
+ *
+ * Comment klasi til að senda upplýsingar um comment á þjón
  */
+
 
 @Entity
 @Table(name="comment")
 public class Comment {
-
     // unique auðkenni fyrir comment
     @Id
-    private UUID id = UUID.randomUUID();
+    private UUID commentId = UUID.randomUUID();
     // höfundur, þ.e. sá sem skrifaði commentið
     private String username;
     // commentið sjálft
@@ -24,14 +32,17 @@ public class Comment {
     // auglýsing sem commentið tilheyrir
     @ManyToOne(fetch= FetchType.LAZY)
     private Ad ad;
+    private int adId;
+
 
     /**
-     * Smiður með viðföndum
+     * smiður með viðföngum
      * @param username notendanafn höfundar
      * @param comment commentið sjálft
      * @param ad auglýsing sem comment tilheyrir
      */
-    public Comment(String username, String comment, Ad ad) {
+    public Comment( String username, String comment, Ad ad) {
+
         this.username = username;
         this.comment = comment;
         this.ad = ad;
@@ -41,6 +52,15 @@ public class Comment {
      * Tómur smiður
      */
     public Comment() {
+    }
+
+
+    public UUID getId() {
+        return commentId;
+    }
+
+    public void setId(UUID id) {
+        this.commentId = id;
     }
 
     public String getUsername() {
@@ -59,11 +79,13 @@ public class Comment {
         this.comment = comment;
     }
 
-    public UUID getId() {
-        return id;
+    public int getAdId() {
+        return adId;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setAdId(int adId) {
+        this.adId = adId;
     }
+
+
 }

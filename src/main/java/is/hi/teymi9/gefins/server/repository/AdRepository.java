@@ -3,16 +3,32 @@ package is.hi.teymi9.gefins.server.repository;
 import is.hi.teymi9.gefins.server.model.Ad;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
+
+/**
+ *
+ * @author Kristín María
+ * @date March 2018
+ *
+ * Repository fyrir ad.
+ */
 /**
  *
  * @author Einar
  * @date March 2018
- * 
+ *
  * Repository fyrir ad.
  */
+
+public interface AdRepository extends JpaRepository<Ad, Long> {
+
+    /**
+     * Nær í allar ads
+import java.util.List;
+import java.util.UUID;
+
 
 public interface AdRepository extends JpaRepository<Ad, Long>{
     /**

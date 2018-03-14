@@ -82,7 +82,6 @@ public class UserController {
             return "Create user failed. Please try again.";
         }
 
-
     }
 
     /**

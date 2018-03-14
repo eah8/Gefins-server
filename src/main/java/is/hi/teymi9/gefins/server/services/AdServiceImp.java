@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -23,6 +22,15 @@ import java.util.UUID;
  * Þjónusta sem sér um samskipti við Ad repository
  *
  */
+
+/**
+ *
+ * @author Kristín María
+ * @date March 2018
+ *
+ * Þjónusta sem sér um samskipti við repositories
+ */
+
 @Service
 public class AdServiceImp implements AdService {
 
@@ -30,16 +38,17 @@ public class AdServiceImp implements AdService {
     @Autowired
     AdRepository adRep;
 
+
     /**
      * Bætir við ad í adRep
      *
-     * @param ad auglýsing
+     * @param u auglýsing
      * @throws DataException
      */
     @Override
-    public void addAd(Ad ad) throws DataException {
+    public void addAd(Ad u) throws DataException {
         try {
-            adRep.save(ad);    // Notum save en ekki add
+            adRep.save(u);
         } catch (DataAccessException s) {
             throw new DataException(s);
         }

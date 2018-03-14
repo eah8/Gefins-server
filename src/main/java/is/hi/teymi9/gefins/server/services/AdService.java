@@ -15,6 +15,15 @@ import java.util.UUID;
  * Þjónusta sem sér um samskipti við Ad repository
  *
  */
+
+/**
+ *
+ * @author Kristín María
+ * @date March 2018
+ *
+ * Þjónusta sem sér um samskipti við repositories
+ *
+ */
 public interface AdService {
 
     /**
@@ -32,7 +41,7 @@ public interface AdService {
      * @throws DataException
      */
     public List<Ad> allAds() throws DataException;
-    
+
     /**
      * Vistar ad
      * @param ad auglýsing sem skal vista
