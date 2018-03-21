@@ -95,7 +95,7 @@ public class MessageServiceImp implements MessageService {
      */
     @Override
     public List<Message> findMessageBySender(String sender) {
-        return messageRep.findBySender(sender);
+        return messageRep.findBySenderOrderByDateDesc(sender);
     }
 
     /**
@@ -105,5 +105,5 @@ public class MessageServiceImp implements MessageService {
      */
     @Override
     public List<Message> findMessageByRecipient(String recipient) {
-        return messageRep.findByRecipient(recipient);
+        return messageRep.findByRecipientOrderByDateDesc(recipient);
     }}
