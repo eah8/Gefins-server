@@ -28,7 +28,7 @@ public class Message {
     private String subject;
     // skilaboðin sjálf
     private String message;
-    // dagsetning skilaboða, nota String vegna vesens með serialization á Date
+    // dagsetning skilaboða
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
     private Date date;
     // er viðtakandi búinn að lesa skilaboðin?
