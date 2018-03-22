@@ -37,8 +37,8 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
    List<Message> findById(UUID id);
 
    // finnur öll message eftir ákveðinn höfund
-    List<Message> findBySender(String sender);
+    List<Message> findBySenderOrderByDateDesc(String sender);
 
     // finnur öll message til ákveðins notands
-    List<Message> findByRecipient(String recipient);
+    List<Message> findByRecipientOrderByDateDesc(String recipient);
 }

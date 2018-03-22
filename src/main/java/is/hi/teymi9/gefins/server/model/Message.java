@@ -1,5 +1,7 @@
 package is.hi.teymi9.gefins.server.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
@@ -26,15 +28,16 @@ public class Message {
     private String subject;
     // skilaboðin sjálf
     private String message;
-    // dagsetning skilaboða, nota String vegna vesens með serialization á Date
-    private String date;
+    // dagsetning skilaboða
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private Date date;
     // er viðtakandi búinn að lesa skilaboðin?
     private boolean read;
 
     // Smiður
     public Message(String sender, String recipient, String subject, String message) {
         id = UUID.randomUUID();
-        date = new Date().toString();
+        date = new Date();
         read = false;
         this.sender = sender;
         this.recipient = recipient;
@@ -85,11 +88,11 @@ public class Message {
         this.message = message;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
