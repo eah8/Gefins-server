@@ -3,7 +3,6 @@ package is.hi.teymi9.gefins.server.services;
 import is.hi.teymi9.gefins.server.exceptions.DataException;
 import is.hi.teymi9.gefins.server.model.Ad;
 import is.hi.teymi9.gefins.server.model.Comment;
-import is.hi.teymi9.gefins.server.repository.AdRepository;
 import is.hi.teymi9.gefins.server.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -24,13 +23,13 @@ import java.util.UUID;
 @Service
 public class CommentServiceImp implements CommentService {
 
-    // Tenging yfir í safn af ads
+    // Tenging yfir í safn af commentum
     @Autowired
     CommentRepository commentRep;
 
 
     /**
-     * Bætir við ad í adRep
+     * Bætir við athugasemd í CommentRep
      *
      * @param comment auglýsing
      * @throws DataException
