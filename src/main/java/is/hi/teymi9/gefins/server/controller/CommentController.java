@@ -37,7 +37,7 @@ public class CommentController {
     CommentService commentService;
 
     // Logger til að geta skrifað út villuboð
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommentController.class);
 
     /**
      * Sækir allar auglýsingar sem ákveðinn notandi hefur skrifað
@@ -70,7 +70,7 @@ public class CommentController {
      */
     @RequestMapping(value = "createComment", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
     public @ResponseBody String createUser(@RequestBody Comment comment) throws DataException {
-        LOGGER.info("JSON create ad message: " + comment.toString());
+        LOGGER.info("JSON create comment message: " + comment.toString());
         commentService.addComment(comment);
         LOGGER.info("Comment: " + comment.getComment() + " created!");
         return "JSON message received! Comment " + comment.toString() + " created!";
