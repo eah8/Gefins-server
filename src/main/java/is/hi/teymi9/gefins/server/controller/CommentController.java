@@ -25,7 +25,7 @@ import java.util.List;
  * @date March 2018
  *
  *
- * Sér um þjónustu í tengslum við auglýsingar
+ * Sér um þjónustu í tengslum við athugasemdir
  */
 
 @Controller

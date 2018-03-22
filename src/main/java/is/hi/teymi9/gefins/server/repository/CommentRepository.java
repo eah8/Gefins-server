@@ -40,9 +40,6 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
    // finnur allar athugasemdir með ákveðið id
    List<Comment> findById(UUID id);
 
-   // finnur allar athugasemdir eftir ákveðinn höfund
-    List<Comment> findByAdUsername(String username);
-
     // Finnur allar athugasemdir eftir auglýsingu
-    List<Comment> findCommentByAd(Ad ad);
+    List<Comment> findByAd(Ad ad);
 }
