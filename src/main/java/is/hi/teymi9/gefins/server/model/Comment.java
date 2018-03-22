@@ -70,4 +70,11 @@ public class Comment {
         this.comment = comment;
     }
 
+    public Ad getAd() {
+        return ad;
+    }
+
+    public void setAd(Ad ad) {
+        this.ad = ad;
+    }
 }

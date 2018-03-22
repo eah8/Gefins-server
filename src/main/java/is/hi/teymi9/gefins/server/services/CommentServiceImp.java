@@ -108,7 +108,7 @@ public class CommentServiceImp implements CommentService {
 
     @Override
     public List<Comment> findCommentByAd(Ad ad) {
-        List<Comment> comments = commentRep.findCommentByAd(ad);
+        List<Comment> comments = commentRep.findByAd(ad);
         return comments;
     };
 
