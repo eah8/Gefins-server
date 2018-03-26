@@ -84,7 +84,7 @@ public class AdController {
      * @throws DataException
      */
     @RequestMapping(value = "createAd", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
-    public @ResponseBody String createUser(@RequestBody Ad u) throws DataException {
+    public @ResponseBody String createAd(@RequestBody Ad u) throws DataException {
         LOGGER.info("JSON create ad message: " + u.toString());
         adService.addAd(u);
         LOGGER.info("Ad " + u.getAdName() + " created!");
@@ -93,3 +93,4 @@ public class AdController {
 
 
 }
+
