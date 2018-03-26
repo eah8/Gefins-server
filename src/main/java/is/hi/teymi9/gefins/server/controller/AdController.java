@@ -79,8 +79,8 @@ public class AdController {
 
     /**
      *
-     * @param u ad sem búa á til
-     * @return Skilaboð um að tekist hafi að búa til ad
+     * @param u auglýsing sem búa á til
+     * @return Skilaboð um að tekist hafi að búa til auglýsingu
      * @throws DataException
      */
     @RequestMapping(value = "createAd", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
