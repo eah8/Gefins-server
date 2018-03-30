@@ -70,6 +70,36 @@ public class AdServiceImp implements AdService {
     }
 
     /**
+     * Skilar auglýsingum af ákveðnum flokki frá adRep
+     * adType       tegund yfirflokk
+     * adTypeOfType tegund undirflokks
+     * @return listi af auglýsingum af ákveðnum flokki
+     * @throws DataException
+     */
+    @Override
+    public List<Ad> findAdsOfType(String adType, String adTypeOfType) throws DataException {
+        try {
+            //ef yfirflokkur er null þá er leitað að ÖLLUM auglýsingum (þ.e. enginn flokkun)
+            if(adType == null){
+                return adRep.findAll();
+            }
+            //ef undirflokkur er null þá er leitað að öllum auglýsingum sem hafa yfirflokkinn
+            //og með alla undirflokka (þ.e. engin undirflokkun)
+            else if(adTypeOfType == null){
+                return adRep.findByAdType((adType));
+            }
+            //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að þeim auglýsingum
+            //sem innihalda báða flokkana
+            else{
+                return adRep.findByAdTypeAndAdTypeOfType(adType, adTypeOfType);
+            }
+        } catch (DataAccessException s) {
+            throw new DataException(s);
+        }
+    }
+
+
+    /**
      * Vistar ad
      * @param ad auglýsing sem skal vista
      * @return auglýsingin sem vistuð var

@@ -43,6 +43,14 @@ public interface AdService {
     public List<Ad> allAds() throws DataException;
 
     /**
+     * Skilar auglýsingum af ákveðnum flokki frá adRep
+     *
+     * @return listi af auglýsingum af ákveðnum flokki
+     * @throws DataException
+     */
+    public List<Ad> findAdsOfType(String adType, String adTypeOfType) throws DataException;
+
+    /**
      * Vistar ad
      * @param ad auglýsing sem skal vista
      * @return auglýsingin sem vistuð var

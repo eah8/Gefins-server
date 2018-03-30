@@ -44,6 +44,12 @@ public interface AdRepository extends JpaRepository<Ad, Long>{
    @Override
    Ad findOne(Long id);
 
+    //finnur allar auglýsingar með ákveðinn flokk
+    List<Ad> findByAdType(String type);
+
+   //finnur allar auglýsingar með ákveðinn flokk og undirflokk
+   List<Ad> findByAdTypeAndAdTypeOfType(String type, String typeOfType);
+
    // finnur öll ads með ákveðið id
    List<Ad> findById(UUID id);
 
