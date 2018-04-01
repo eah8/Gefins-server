@@ -81,7 +81,6 @@ public class AdServiceImp implements AdService {
     @Override
     public List<Ad> findAdsOfType(String adType, String adTypeOfType) throws DataException {
         try {
-            /*
             //ef yfirflokkur er tómur strengur þá er leitað að ÖLLUM auglýsingum (þ.e. enginn flokkun)
             if(adType == EMPTY_STRING){
                 return adRep.findAll();
@@ -94,9 +93,8 @@ public class AdServiceImp implements AdService {
             //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að þeim auglýsingum
             //sem innihalda báða flokkana
             else{
-            */
                 return adRep.findByAdTypeAndAdTypeOfType(adType, adTypeOfType);
-            //}
+            }
         } catch (DataAccessException s) {
             throw new DataException(s);
         }
