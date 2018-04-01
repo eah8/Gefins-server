@@ -37,6 +37,8 @@ public class AdServiceImp implements AdService {
     // Tenging yfir í safn af ads
     @Autowired
     AdRepository adRep;
+    //Tómur strengur
+    String EMPTY_STRING = "";
 
 
     /**
@@ -79,13 +81,13 @@ public class AdServiceImp implements AdService {
     @Override
     public List<Ad> findAdsOfType(String adType, String adTypeOfType) throws DataException {
         try {
-            //ef yfirflokkur er null þá er leitað að ÖLLUM auglýsingum (þ.e. enginn flokkun)
-            if(adType == null){
+            //ef yfirflokkur er tómur strengur þá er leitað að ÖLLUM auglýsingum (þ.e. enginn flokkun)
+            if(adType == EMPTY_STRING){
                 return adRep.findAll();
             }
-            //ef undirflokkur er null þá er leitað að öllum auglýsingum sem hafa yfirflokkinn
+            //ef undirflokkur er tómur stengur þá er leitað að öllum auglýsingum sem hafa yfirflokkinn
             //og með alla undirflokka (þ.e. engin undirflokkun)
-            else if(adTypeOfType == null){
+            else if(adTypeOfType == EMPTY_STRING){
                 return adRep.findByAdType((adType));
             }
             //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að þeim auglýsingum
