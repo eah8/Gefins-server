@@ -83,9 +83,11 @@ public class AdController {
             Ad ad = new Ad("Gefins", "Mjúkur sófi", "Húsgögn", "Sófi", "Svartur", "Mjúkur 3ja sæta sófi úr microsoft efni", "olla", comments, "105");
             Ad ad2 = new Ad("Óska eftir", "Eldhúsborð", "Húsgögn", "Borð", "Hvítur", "4 manna eldhúsborð úr Ikea", "sandra", comments, "201");
             Ad ad3 = new Ad("Gefins", "Leðurjakki", "Fatnaður", "Yfirhöfn", "Svartur", "Stuttur leðurjakki í stærð 38", "sandra", comments, "123");
+            Ad ad4 = new Ad("Gefins", "Eldhússtóll", "Húsgögn", "Stóll", "Svartur", "Eldhússtóll úr Rúmfatalagernum", "sandra", comments, "123");
             adService.addAd(ad);
             adService.addAd(ad2);
             adService.addAd(ad3);
+            adService.addAd(ad4);
         }
         LOGGER.info("fetching XML states");
         ads = adService.allAds();
