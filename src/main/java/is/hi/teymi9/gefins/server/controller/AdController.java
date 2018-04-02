@@ -109,6 +109,20 @@ public class AdController {
         return "JSON message received! Ad " + u.toString() + " created!";
     }
 
+    /**
+     *
+     * @param ad auglýsing sem eyða skal
+     * @return Skilaboð um að tekist hafi að eyða auglýsingu
+     * @throws DataException
+     */
+    @RequestMapping(value = "deleteAd", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
+    public @ResponseBody String deleteAd(@RequestBody Ad ad) throws DataException {
+        LOGGER.info("JSON delete ad message: " + ad.toString());
+        adService.deleteAd(ad);
+        LOGGER.info("Ad " + ad.getAdName() + " deleted!");
+        return "Ad deleted successfully";
+    }
+
 
 }
 

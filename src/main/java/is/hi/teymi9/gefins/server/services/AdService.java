@@ -80,4 +80,10 @@ public interface AdService {
      */
     public List<Ad> findAdByAdUsername(String username);
 
+    /**
+     * Eyðir auglýsingu
+     * @param ad auglýsing sem skal eyða
+     */
+    public void deleteAd(Ad ad);
+
 }
