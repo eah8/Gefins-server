@@ -72,29 +72,51 @@ public class AdServiceImp implements AdService {
     }
 
     /**
-     * Skilar auglýsingum af ákveðnum flokki frá adRep
+     * Skilar auglýsingum af ákv. tegund, ákveðnum flokki (og lit) frá adRep
      * adType       tegund yfirflokk
      * adTypeOfType tegund undirflokks
+     * adGiveOrTake tegund auglýsingar (gefins/óska eftir)
+     * adColor      litur á auglýstum hlut
      * @return listi af auglýsingum af ákveðnum flokki
      * @throws DataException
      */
     @Override
-    public List<Ad> findAdsOfType(String adType, String adTypeOfType) throws DataException {
+    public List<Ad> findAdsOfType(String adType, String adTypeOfType, String adGiveOrTake, String adColor) throws DataException {
         try {
-            //ef yfirflokkur er tómur strengur þá er leitað að ÖLLUM auglýsingum (þ.e. enginn flokkun)
+            //ef yfirflokkur er tómur strengur þá er leitað að ÖLLUM auglýsingum af ákv. tegund (þ.e. enginn flokkun nema tegund auglýsingar)
             if(adType == EMPTY_STRING){
-                return adRep.findAll();
+                if(adColor == EMPTY_STRING) {
+                    //allir litir
+                    return adRep.findByGiveOrTake(adGiveOrTake);
+                }
+                else{
+                    //ákveðinn litur samkv. leitarskilyrði
+                    return adRep.findByGiveOrTakeAndAdColor(adGiveOrTake, adColor);
+                }
             }
-            //ef undirflokkur er tómur stengur þá er leitað að öllum auglýsingum sem hafa yfirflokkinn
+            //ef undirflokkur er tómur stengur þá er leitað að öllum auglýsingum af ákv. tegund sem hafa yfirflokkinn
             //og með alla undirflokka (þ.e. engin undirflokkun)
             else if(adTypeOfType == EMPTY_STRING){
-
-                return adRep.findByAdType(adType);
-        }
-            //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að þeim auglýsingum
+                if(adColor == EMPTY_STRING) {
+                    //allir litir
+                    return adRep.findByGiveOrTakeAndAdType(adGiveOrTake, adType);
+                }
+                else{
+                    //ákveðinn litur samkv. leitarskilyrði
+                    return adRep.findByGiveOrTakeAndAdTypeAndAdColor(adGiveOrTake, adType, adColor);
+                }
+            }
+            //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að auglýsingum af ákv. tegund
             //sem innihalda báða flokkana
             else{
-                return adRep.findByAdTypeAndAdTypeOfType(adType, adTypeOfType);
+                if(adColor == EMPTY_STRING) {
+                    //allir litir
+                    return adRep.findByGiveOrTakeAndAdTypeAndAdTypeOfType(adGiveOrTake, adType, adTypeOfType);
+                }
+                else{
+                    //ákveðinn litur samkv. leitarskilyrði
+                    return adRep.findByGiveOrTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(adGiveOrTake, adType, adTypeOfType, adColor);
+                }
             }
         } catch (DataAccessException s) {
             throw new DataException(s);

@@ -48,7 +48,7 @@ public interface AdService {
      * @return listi af auglýsingum af ákveðnum flokki
      * @throws DataException
      */
-    public List<Ad> findAdsOfType(String adType, String adTypeOfType) throws DataException;
+    public List<Ad> findAdsOfType(String adType, String adTypeOfType, String adGiveOrTake, String adColor) throws DataException;
 
     /**
      * Vistar ad
