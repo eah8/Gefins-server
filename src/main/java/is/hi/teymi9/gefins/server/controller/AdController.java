@@ -59,7 +59,7 @@ public class AdController {
      * @return Listi af auglýsingum í um beðnum flokki
      * @throws DataException
      */
-    @RequestMapping(value = "getAdsByType", method = RequestMethod.GET, consumes = "application/json;charset=utf-8", produces = "application/json")
+    @RequestMapping(value = "getAdsByType", method = RequestMethod.POST, consumes = "application/json;charset=utf-8", produces = "application/json")
     public @ResponseBody
     List<Ad> getAdsByType(@RequestBody Ad a) throws DataException {
         LOGGER.info("JSON get type of ads message: " + a.toString());
