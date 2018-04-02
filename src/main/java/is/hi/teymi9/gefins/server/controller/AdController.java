@@ -90,7 +90,7 @@ public class AdController {
             adService.addAd(ad4);
         }
         LOGGER.info("fetching XML states");
-        //ads = adService.allAds();
+        ads = adService.allAds();
         return ads;
     }
 
