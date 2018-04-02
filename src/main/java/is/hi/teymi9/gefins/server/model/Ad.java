@@ -1,5 +1,7 @@
 package is.hi.teymi9.gefins.server.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,7 @@ public class Ad {
     private String adUsername;
     // athugasemdir sem gerðar hafa verið við auglýsinguna
     @OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="ad")
+    @JsonManagedReference
     private List<Comment> adComments;
     // póstnúmer staðsetning hlutar
     private String adLocation;
