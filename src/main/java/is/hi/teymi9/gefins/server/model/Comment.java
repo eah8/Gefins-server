@@ -1,5 +1,8 @@
 package is.hi.teymi9.gefins.server.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.UUID;
 
@@ -24,6 +27,7 @@ public class Comment {
     private String comment;
     // auglýsing sem commentið tilheyrir
     @ManyToOne(fetch= FetchType.LAZY)
+    @JsonBackReference
     private Ad ad;
 
     /**
