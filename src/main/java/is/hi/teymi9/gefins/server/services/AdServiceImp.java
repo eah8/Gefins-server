@@ -88,8 +88,9 @@ public class AdServiceImp implements AdService {
             //ef undirflokkur er tómur stengur þá er leitað að öllum auglýsingum sem hafa yfirflokkinn
             //og með alla undirflokka (þ.e. engin undirflokkun)
             else if(adTypeOfType == EMPTY_STRING){
+
                 return adRep.findByAdType(adType);
-            }
+        }
             //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að þeim auglýsingum
             //sem innihalda báða flokkana
             else{

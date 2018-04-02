@@ -55,15 +55,15 @@ public class AdController {
 
     /**
      * Sækir allar auglýsingar sem eru í ákveðnum flokki og undirflokki
-     * @param a  auglýsing sem segir hvaða flokk af auglýsingum skal sækja
+     * @param ad  auglýsing sem segir hvaða flokk af auglýsingum skal sækja
      * @return Listi af auglýsingum í um beðnum flokki
      * @throws DataException
      */
     @RequestMapping(value = "getAdsByType", method = RequestMethod.POST, consumes = "application/json;charset=utf-8", produces = "application/json")
     public @ResponseBody
-    List<Ad> getAdsByType(@RequestBody Ad a) throws DataException {
-        LOGGER.info("JSON get type of ads message: " + a.toString());
-        List<Ad> adsOfType = adService.findAdsOfType(a.getAdType(), a.getAdTypeOfType());
+    List<Ad> getAdsByType(@RequestBody Ad ad) throws DataException {
+        LOGGER.info("JSON get type of ads message: " + ad.toString());
+        List<Ad> adsOfType = adService.findAdsOfType(ad.getAdType(), ad.getAdTypeOfType());
         return adsOfType;
     }
 
