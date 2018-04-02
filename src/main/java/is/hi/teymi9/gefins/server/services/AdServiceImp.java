@@ -159,4 +159,13 @@ public class AdServiceImp implements AdService {
     public List<Ad> findAdByAdUsername(String username) {
         return adRep.findByAdUsername(username);
     }
+
+    /**
+     * Eyðir auglýsingu
+     * @param ad auglýsing sem skal eyða
+     */
+    @Override
+    public void deleteAd(Ad ad) {
+        adRep.delete(ad);
+    }
 }
