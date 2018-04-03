@@ -45,22 +45,22 @@ public interface AdRepository extends JpaRepository<Ad, Long>{
    Ad findOne(Long id);
 
     //finnur allar auglýsingar af ákveðinni tegund (allir litir)
-    List<Ad> findByGiveOrTake(String giveOrTake);
+    List<Ad> findByGiveorTake(String giveOrTake);
 
     //finnur allar auglýsingar af ákveðinni tegund og með ákveðinn lit í leitarskilyrði
-    List<Ad> findByGiveOrTakeAndAdColor(String giveOrTake, String color);
+    List<Ad> findByGiveorTakeAndAdColor(String giveOrTake, String color);
 
     //finnur allar auglýsingar af ákveðinni tegund og með ákveðinn yfirflokk (allir litir)
-    List<Ad> findByGiveOrTakeAndAdType(String giveOrTake, String type);
+    List<Ad> findByGiveorTakeAndAdType(String giveOrTake, String type);
 
     //finnur allar auglýsingar af ákveðinni tegund, með ákveðinn yfirflokk og ákveðinn lit í leitarskilyrði
-    List<Ad> findByGiveOrTakeAndAdTypeAndAdColor(String giveOrTake, String type, String color);
+    List<Ad> findByGiveorTakeAndAdTypeAndAdColor(String giveOrTake, String type, String color);
 
    //finnur allar auglýsingar af ákv. tegund, með ákveðinn flokk og undirflokk (allir litir)
-   List<Ad> findByGiveOrTakeAndAdTypeAndAdTypeOfType(String giveOrTake, String type, String typeOfType);
+   List<Ad> findByGiveorTakeAndAdTypeAndAdTypeOfType(String giveOrTake, String type, String typeOfType);
 
     //finnur allar auglýsingar af ákv. tegund, með ákveðinn flokk og undirflokk og ákv. lit í leitarskilyrði
-    List<Ad> findByGiveOrTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(String giveOrTake, String type, String typeOfType, String color);
+    List<Ad> findByGiveorTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(String giveOrTake, String type, String typeOfType, String color);
 
    // finnur öll ads með ákveðið id
    List<Ad> findById(UUID id);
