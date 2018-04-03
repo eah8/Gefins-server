@@ -60,7 +60,7 @@ public interface AdRepository extends JpaRepository<Ad, Long>{
    List<Ad> findByGiveorTakeAndAdTypeAndAdTypeOfType(String giveOrTake, String type, String typeOfType);
 
     //finnur allar auglýsingar af ákv. tegund, með ákveðinn flokk og undirflokk og ákv. lit í leitarskilyrði
-    List<Ad> findByGiveorTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(String giveOrTake, String type, String typeOfType, String color);
+    List<Ad> findByGiveorTakeAndAdTypeAndAdTypeOfTypeAndAdColor(String giveOrTake, String type, String typeOfType, String color);
 
    // finnur öll ads með ákveðið id
    List<Ad> findById(UUID id);

@@ -115,7 +115,7 @@ public class AdServiceImp implements AdService {
                 }
                 else{
                     //ákveðinn litur samkv. leitarskilyrði
-                    return adRep.findByGiveorTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(adGiveOrTake, adType, adTypeOfType, adColor);
+                    return adRep.findByGiveorTakeAndAdTypeAndAdTypeOfTypeAndAdColor(adGiveOrTake, adType, adTypeOfType, adColor);
                 }
             }
         } catch (DataAccessException s) {
