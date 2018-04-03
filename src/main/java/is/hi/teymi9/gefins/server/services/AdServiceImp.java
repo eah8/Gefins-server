@@ -87,11 +87,11 @@ public class AdServiceImp implements AdService {
             if(adType == EMPTY_STRING){
                 if(adColor == EMPTY_STRING) {
                     //allir litir
-                    return adRep.findByGiveOrTake(adGiveOrTake);
+                    return adRep.findByGiveorTake(adGiveOrTake);
                 }
                 else{
                     //ákveðinn litur samkv. leitarskilyrði
-                    return adRep.findByGiveOrTakeAndAdColor(adGiveOrTake, adColor);
+                    return adRep.findByGiveorTakeAndAdColor(adGiveOrTake, adColor);
                 }
             }
             //ef undirflokkur er tómur stengur þá er leitað að öllum auglýsingum af ákv. tegund sem hafa yfirflokkinn
@@ -99,11 +99,11 @@ public class AdServiceImp implements AdService {
             else if(adTypeOfType == EMPTY_STRING){
                 if(adColor == EMPTY_STRING) {
                     //allir litir
-                    return adRep.findByGiveOrTakeAndAdType(adGiveOrTake, adType);
+                    return adRep.findByGiveorTakeAndAdType(adGiveOrTake, adType);
                 }
                 else{
                     //ákveðinn litur samkv. leitarskilyrði
-                    return adRep.findByGiveOrTakeAndAdTypeAndAdColor(adGiveOrTake, adType, adColor);
+                    return adRep.findByGiveorTakeAndAdTypeAndAdColor(adGiveOrTake, adType, adColor);
                 }
             }
             //ef bæði yfirflokkur og undirflokkur eru fyrir hendi þá er leitað að auglýsingum af ákv. tegund
@@ -111,11 +111,11 @@ public class AdServiceImp implements AdService {
             else{
                 if(adColor == EMPTY_STRING) {
                     //allir litir
-                    return adRep.findByGiveOrTakeAndAdTypeAndAdTypeOfType(adGiveOrTake, adType, adTypeOfType);
+                    return adRep.findByGiveorTakeAndAdTypeAndAdTypeOfType(adGiveOrTake, adType, adTypeOfType);
                 }
                 else{
                     //ákveðinn litur samkv. leitarskilyrði
-                    return adRep.findByGiveOrTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(adGiveOrTake, adType, adTypeOfType, adColor);
+                    return adRep.findByGiveorTakeAndAdTypeAndAdTypeOfTypeAAndAdColor(adGiveOrTake, adType, adTypeOfType, adColor);
                 }
             }
         } catch (DataAccessException s) {
