@@ -63,7 +63,7 @@ public class AdController {
     public @ResponseBody
     List<Ad> getAdsByType(@RequestBody Ad ad) throws DataException {
         LOGGER.info("JSON get type of ads message: " + ad.toString());
-        List<Ad> adsOfType = adService.findAdsOfType(ad.getAdType(), ad.getAdTypeOfType(), ad.getGiveOrTake(), ad.getAdColor());
+        List<Ad> adsOfType = adService.findAdsOfType(ad.getAdType(), ad.getAdTypeOfType(), ad.getGiveorTake(), ad.getAdColor());
         return adsOfType;
     }
 
