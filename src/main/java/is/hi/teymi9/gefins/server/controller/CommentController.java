@@ -73,7 +73,7 @@ public class CommentController {
         LOGGER.info("JSON create comment message: " + comment.toString());
         commentService.addComment(comment);
         LOGGER.info("Comment: " + comment.getComment() + " created!");
-        return "JSON message received! Comment " + comment.toString() + " created!";
+        return "JSON message received! Comment " + comment.getComment() + "with ad "+ comment.getAd() + " created!";
     }
 
 
