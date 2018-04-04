@@ -72,4 +72,12 @@ public interface CommentService {
      */
     public List<Comment> findCommentByAd(Ad ad);
 
+
+    /**
+     * Eyðir auglýsingu
+     * @param comment athugasemd sem skal eyða
+     */
+    public void deleteComment(Comment comment);
+
+
 }
