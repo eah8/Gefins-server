@@ -172,6 +172,7 @@ public class AdServiceImp implements AdService {
         return "Update ad successful!";
     }
 
+
     /**
      * Finnur allar ads eftir ákveðinn notanda
      * @param username notendannafn notandans
