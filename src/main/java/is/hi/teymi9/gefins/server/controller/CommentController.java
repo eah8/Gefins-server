@@ -76,5 +76,18 @@ public class CommentController {
         return "JSON message received! Comment " + comment.getComment() + "with ad "+ comment.getAd() + " created!";
     }
 
+    /**
+     *
+     * @param comment athugasemd sem eyða skal
+     * @return Skilaboð um að tekist hafi að eyða athugasemd
+     * @throws DataException
+     */
+    @RequestMapping(value = "deleteComment", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
+    public @ResponseBody String deleteAd(@RequestBody Comment comment) throws DataException {
+        LOGGER.info("JSON delete ad message: " + comment.toString());
+        commentService.deleteComment(comment);
+        LOGGER.info("Comment " + comment.getComment() + " deleted!");
+        return "Comment deleted successfully";
+    }
 
 }

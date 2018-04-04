@@ -112,4 +112,13 @@ public class CommentServiceImp implements CommentService {
         return comments;
     };
 
+    /**
+     * Eyðir athugasemd
+     * @param comment athugasemd sem skal eyða
+     */
+    @Override
+    public void deleteComment(Comment comment) {
+        commentRep.delete(comment);
+    }
+
 }
