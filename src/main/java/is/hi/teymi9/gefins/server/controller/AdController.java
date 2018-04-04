@@ -109,6 +109,21 @@ public class AdController {
         return "JSON message received! Ad " + u.toString() + " created!";
     }
 
+
+    /**
+     *
+     * @param a auglýsing sem á að uppfæra
+     * @return Skilaboð um að tekist hafi að uppfæra auglýsingu
+     * @throws DataException
+     */
+    @RequestMapping(value = "updateAd", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
+    public @ResponseBody String updateAd(@RequestBody Ad a) throws DataException {
+        LOGGER.info("JSON update user message: " + a.toString());
+        String result = adService.updateAd(a);
+        return result;
+    }
+
+
     /**
      *
      * @param ad auglýsing sem eyða skal
