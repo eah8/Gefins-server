@@ -12,6 +12,7 @@ import java.util.UUID;
  *
  * @author Kristín María og Einar
  * @date March 2018
+ * @version 1.0
  *
  * Repository fyrir ad.
  */
@@ -19,13 +20,6 @@ import java.util.UUID;
 
 public interface AdRepository extends JpaRepository<Ad, Long> {
 
-    /**
-     * Nær í allar ads
-import java.util.List;
-import java.util.UUID;
-
-
-public interface AdRepository extends JpaRepository<Ad, Long>{
     /**
      * Nær í öll ads
      * @return listi af ads
@@ -36,11 +30,16 @@ public interface AdRepository extends JpaRepository<Ad, Long>{
     /**
      * Bætir við ad
      * @param ad
-     * @return
+     * @return auglýsing
      */
     @Override
     Ad save(Ad ad);
 
+    /**
+     * Finnur auglýsingu með viðeigandi id
+     * @param id
+     * @return auglýsing
+     */
    @Override
    Ad findOne(Long id);
 

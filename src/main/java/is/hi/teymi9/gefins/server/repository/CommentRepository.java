@@ -29,11 +29,16 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     /**
      * Bætir við athugasemd
      * @param comment
-     * @return
+     * @return athugasemd
      */
     @Override
     Comment save(Comment comment);
 
+    /**
+     * Finnur athugasemd með viðeigandi id
+     * @param id
+     * @return athugasemd
+     */
    @Override
    Comment findOne(Long id);
 

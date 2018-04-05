@@ -23,7 +23,7 @@ import java.util.List;
  *
  * @author Ólöf Fríða Magnúsdóttir
  * @date March 2018
- *
+ * @version 1.0
  *
  * Sér um þjónustu í tengslum við athugasemdir
  */
@@ -50,6 +50,7 @@ public class CommentController {
     List<Comment> getAdComments(@RequestBody Ad ad) throws DataException {
         LOGGER.info("JSON get user ads message: " + ad.toString());
         List<Comment> allComments = commentService.findCommentByAd(ad);
+        // Ef það eru engin comment þá senda út "dummy" athugasemdir (Til að sjá hvort forritið virki)
         if (allComments.isEmpty()) {
             LOGGER.info("generating ads");
             Comment c1 = new Comment("user1", "Hér er athugasemd 1",ad);

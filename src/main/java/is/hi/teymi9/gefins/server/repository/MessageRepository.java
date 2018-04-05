@@ -9,8 +9,9 @@ import java.util.UUID;
  *
  * @author Einar
  * @date March 2018
+ * @version 1.0
  *
- * Repository fyrir ad.
+ * Repository fyrir skilaboð
  */
 
 public interface MessageRepository extends JpaRepository<Message, Long> {
@@ -25,11 +26,16 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
     /**
      * Bætir við message
      * @param m
-     * @return
+     * @return message
      */
     @Override
     Message save(Message m);
 
+    /**
+     * finnur message með viðeigandi id
+     * @param id
+     * @return message
+     */
    @Override
    Message findOne(Long id);
 

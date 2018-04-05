@@ -125,6 +125,11 @@ public class UserServiceImp implements UserService {
         return null;
     }
 
+    /**
+     * Finnur notanda eftir notendanafni
+     * @param username
+     * @return
+     */
     @Override
     public User findUserByUsername(String username) {
         List<User> users = userRep.findByUsername(username);

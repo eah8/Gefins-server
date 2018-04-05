@@ -9,21 +9,14 @@ import java.util.UUID;
 
 /**
  *
- * @author Ólöf Fríða Magnúsdóttir
+ * @author Ólöf Fríða og Kristín María
  * @date March 2018
- * 
+ * @version 1.0
+ *
  * Þjónusta sem sér um samskipti við comment repository
  *
  */
 
-/**
- *
- * @author Kristín María
- * @date March 2018
- *
- * Þjónusta sem sér um samskipti við repositories
- *
- */
 public interface CommentService {
 
     /**

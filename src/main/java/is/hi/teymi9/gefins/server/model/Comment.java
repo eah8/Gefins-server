@@ -10,6 +10,7 @@ import java.util.UUID;
  *
  * @author Kristín María og Ólöf
  * @date March 2018
+ * @version 1.0
  *
  * Comment klasi til að senda upplýsingar um comment á þjón
  */
@@ -49,35 +50,66 @@ public class Comment {
     public Comment() {
     }
 
-
+    /**
+     * Nær í id á athugasemd
+     * @return id
+     */
     public UUID getId() {
         return id;
     }
 
+    /**
+     * Stillir id á athugasemd
+     * @param id id
+     */
     public void setId(UUID id) {
         this.id = id;
     }
 
+    /**
+     * Nær í notendanafn á notanda sem skrifaði athugasemdina
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Stillir notendanafnið sem tengist athugasemdinni
+     * @param username notendanafn
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * Nær í textann sem athugasemdin inniheldur
+     * @return comment
+     */
     public String getComment() {
         return comment;
     }
 
+    /**
+     * Stillir textann sem athugasemdin inniheldur
+     * @param comment athugasemd
+     */
     public void setComment(String comment) {
         this.comment = comment;
     }
 
+    /**
+     * Nær í auglýsinguna sem athugasemdin tengist
+     * @return ad
+     */
     public Ad getAd() {
         return ad;
     }
 
+    /**
+     * Stillir auglýsinguna sem athugasemdin tengist
+     * @param ad auglýsing
+     */
     public void setAd(Ad ad) {
         this.ad = ad;
     }

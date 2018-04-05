@@ -10,7 +10,8 @@ import java.util.UUID;
  *
  * @author Einar
  * @date March 2018
- * 
+ * @version 1.0
+ *
  * Þjónusta sem sér um samskipti við Ad repository
  *
  */

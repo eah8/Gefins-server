@@ -10,7 +10,8 @@ import java.util.UUID;
  *
  * @author Einar
  * @date February 2018
- * 
+ * @version 1.0
+ *
  * Þjónusta sem sér um samskipti við repositories
  *
  */
@@ -57,6 +58,11 @@ public interface UserService {
      */
     public User findUserByUsernameAndPassword(String username, String password) throws DataException;
 
+    /**
+     * Finnur user með username
+     * @param username
+     * @return User
+     */
     public User findUserByUsername(String username);
 
     /**

@@ -22,9 +22,10 @@ import java.util.ArrayList;
  *
  * @author Kristín María og Einar
  * @date March 2018
- *
+ * @version 1.0
  *
  * Sér um þjónustu í tengslum við auglýsingar
+ *
  */
 
 @Controller
@@ -71,12 +72,14 @@ public class AdController {
     /**
      * Sækir allar auglýsingar
      * @return Listi sem inniheldur allar auglýsingar
+     * @throws DataException
      */
     @RequestMapping(value="getAds", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody
     List<Ad> getAds() throws DataException {
         // bý til test ads:
         List<Ad> ads = adService.allAds();
+        // Ef listinn er tómur þá senda "dummy" auglýsingar
         if (ads.isEmpty()) {
             LOGGER.info("generating ads");
             ArrayList<Comment> comments = new ArrayList<Comment>();

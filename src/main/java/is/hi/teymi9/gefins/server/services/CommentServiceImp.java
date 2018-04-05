@@ -106,6 +106,11 @@ public class CommentServiceImp implements CommentService {
         return "Update ad successful!";
     }
 
+    /**
+     * Finnur athugasem sem tilheyrir viðeigandi auglýsingu
+     * @param ad auglýsing
+     * @return comments, listi af athugasemdum
+     */
     @Override
     public List<Comment> findCommentByAd(Ad ad) {
         List<Comment> comments = commentRep.findByAd(ad);
