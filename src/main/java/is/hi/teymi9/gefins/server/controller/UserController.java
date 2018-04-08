@@ -114,4 +114,19 @@ public class UserController {
         return result;
 
     }
+
+
+    /**
+     *
+     * @param user notandi sem eyða skal
+     * @return Skilaboð um að tekist hafi að eyða notanda
+     * @throws DataException
+     */
+    @RequestMapping(value = "deleteUser", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
+    public @ResponseBody String deleteUser(@RequestBody User user) throws DataException {
+        LOGGER.info("JSON delete user message: " + user.toString());
+        userService.deleteUser(user);
+        LOGGER.info("User " + user.getUsername() + " deleted!");
+        return "User deleted successfully";
+    }
 }

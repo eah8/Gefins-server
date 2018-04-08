@@ -74,4 +74,11 @@ public interface UserService {
      */
     public String updateUser(User u) throws DataException;
 
+
+    /**
+     * Eyðir notanda
+     * @param user notandi sem skal eyða
+     */
+    public void deleteUser(User user);
+
 }
