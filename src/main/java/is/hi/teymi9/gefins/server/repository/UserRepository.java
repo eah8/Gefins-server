@@ -10,6 +10,7 @@ import java.util.UUID;
  *
  * @author Einar
  * @date February 2018
+ * @version 1.0
  * 
  * Repository fyrir user.
  */
@@ -30,6 +31,11 @@ public interface UserRepository extends JpaRepository<User, Long>{
     @Override
     User save(User user);
 
+    /**
+     * Finnur notanda með viðeigandi id
+     * @param id
+     * @return User
+     */
    @Override
    User findOne(Long id);
    

@@ -24,7 +24,7 @@ import java.util.List;
  *
  * @author Einar
  * @date March 2018
- *
+ * @version 1.0
  *
  * Sér um þjónustu í tengslum við einkaskilaboð
  */

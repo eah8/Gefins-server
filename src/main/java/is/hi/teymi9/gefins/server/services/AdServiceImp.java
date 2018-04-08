@@ -16,19 +16,11 @@ import java.util.UUID;
 
 /**
  *
- * @author Einar
+ * @author Einar og Kristín María
  * @date March 2018
  *
  * Þjónusta sem sér um samskipti við Ad repository
  *
- */
-
-/**
- *
- * @author Kristín María
- * @date March 2018
- *
- * Þjónusta sem sér um samskipti við repositories
  */
 
 @Service

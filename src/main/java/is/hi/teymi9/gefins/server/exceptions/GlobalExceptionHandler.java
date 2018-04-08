@@ -18,7 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
  * 
  * @author Einar 
  * @date February 2018
-
+ * @version 1.0
+ *
  */
 
 // Merkir að exception handlerinn virkar fyrir alla klasa 

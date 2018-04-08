@@ -19,6 +19,7 @@ import java.util.List;
  *
  * @author Einar
  * @date February 2018
+ * @version 1.0
  *
  * Sér um þjónustu við notanda: innskráning, nýskráning etc
  */

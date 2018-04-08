@@ -15,13 +15,16 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author Einar
  * @date February 2018
+ * @version 1.0
  *
  * Sýnir villusíðu ef að notandi fer á ólöglega slóð á þjóni.
   */
+
 @Controller
 @RequestMapping("") // Notice here that the Request Mapping is set at the Class level
 public class PathErrorController implements ErrorController {
 
+    // inniheldur path fyrir error
     private static final String PATH = "/error";
     
     @Autowired
