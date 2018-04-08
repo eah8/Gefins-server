@@ -173,4 +173,14 @@ public class UserServiceImp implements UserService {
         return "Update user successful!";
     }
 
+
+    /**
+     * Eyðir notanda
+     * @param user notandi sem skal eyða
+     */
+    @Override
+    public void deleteUser(User user) {
+        userRep.delete(user);
+    }
+
 }
