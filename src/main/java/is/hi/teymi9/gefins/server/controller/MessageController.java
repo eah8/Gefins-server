@@ -7,6 +7,7 @@ import is.hi.teymi9.gefins.server.model.Message;
 import is.hi.teymi9.gefins.server.model.User;
 import is.hi.teymi9.gefins.server.services.AdService;
 import is.hi.teymi9.gefins.server.services.MessageService;
+import is.hi.teymi9.gefins.server.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,8 @@ public class MessageController {
     // Tenging yfir í þjónustu klasa fyrir forritið
     @Autowired
     MessageService messageService;
+    @Autowired
+    UserService userService;
 
     // Logger til að geta skrifað út villuboð
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageController.class);
@@ -76,6 +79,10 @@ public class MessageController {
     @RequestMapping(value = "sendMessage", method = RequestMethod.POST, consumes = "application/json;charset=utf-8")
     public @ResponseBody Boolean sendMessage(@RequestBody Message m) throws DataException {
         LOGGER.info("JSON send message: " + m.toString());
+        User u = userService.findUserByUsername(m.getRecipient());
+        if(u == null) {
+            return new Boolean(false);
+        }
         messageService.addMessage(m);
         LOGGER.info("Message " + m + " created!");
         return new Boolean(true);
